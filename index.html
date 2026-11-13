@@ -13,32 +13,14 @@ background:#0f1115;color:#e8e8ee;font:15px/1.6 -apple-system,"PingFang SC",sans-
 .s{color:#8b8f9a;font-size:13px;margin-bottom:18px}
 a{display:inline-block;padding:11px 26px;border-radius:8px;background:#ff5c8a;
 color:#fff;text-decoration:none;font-weight:600}
-#err{color:#ff7b72;font-size:12px;margin-top:14px;min-height:18px}
 </style>
 </head>
 <body>
 <div class="box">
   <div class="t">动漫<span>TV</span></div>
-  <div class="s" id="s">正在获取最新地址…</div>
-  <a id="go" href="#" style="display:none">进入</a>
-  <div id="err"></div>
+  <div class="s">dman-tv.pages.dev</div>
+  <a id="go" href="https://dman-tv.pages.dev/">进入</a>
 </div>
-<script>
-var CFG='https://api.github.com/repos/xaprostoboss/dman-config/contents/dman.json';
-function b64(s){try{return decodeURIComponent(escape(atob(String(s).replace(/\s/g,''))))}catch(e){return atob(String(s).replace(/\s/g,''))}}
-function show(u){
-  document.getElementById('s').textContent=u.replace(/^https?:\/\//,'');
-  var a=document.getElementById('go');a.href=u;a.style.display='inline-block';
-  setTimeout(function(){location.replace(u)},600);
-}
-fetch(CFG+'?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.json()})
- .then(function(j){var c=JSON.parse(b64(j.content));if(c&&c.api)show(c.api);else throw 0})
- .catch(function(){
-   fetch('https://raw.githubusercontent.com/xaprostoboss/dman-config/main/dman.json?t='+Date.now(),{cache:'no-store'})
-    .then(function(r){return r.json()})
-    .then(function(c){if(c&&c.api)show(c.api);else throw 0})
-    .catch(function(){document.getElementById('err').textContent='地址获取失败，请稍后刷新'});
- });
-</script>
+<script>setTimeout(function(){location.replace('https://dman-tv.pages.dev/')},400)</script>
 </body>
 </html>
